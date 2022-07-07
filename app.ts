@@ -1,15 +1,13 @@
-let valorAny: any;
-valorAny - 3;
-valorAny = 'ola';
-valorAny = true;
+type input = number | string;
 
-let valorString1: string = 'teste';
-valorString1 = valorAny;
-let valorString2: string = 'teste';
-valorString2 = valorAny;
-
-function somaString(string1: string, string2: string) {
-    console.log(string1 + string2);
+function somaValores(input1: input, input2: input) {
+    if (typeof input1 === "string" || typeof input2 === "string") {
+        return input1.toString() + input2.toString()
+    } else {
+        return input1 + input2
+    }
 }
 
-somaString(valorString1, valorString2);
+console.log(somaValores(1, 5));
+console.log(somaValores('olá', 'tudo bem'));
+console.log(somaValores('que dia é hoje', 5));
